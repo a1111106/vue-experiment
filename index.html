@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue3个人简历实验</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #222222;
+      --subtext: #555555;
+      --border: #e5e7eb;
+      --btn: #42b983;
+      --btn-active: #36a072;
+      --banner1: #34b970;
+      --banner2: #286b75;
+      --info-bg: #f0f6fc;
+      --input-bg: #f9fafb;
+      --modal-bg: #ffffff;
+    }
+    html.dark {
+      --bg: #111827;
+      --card: #1f2937;
+      --text: #f9fafb;
+      --subtext: #d1d5db;
+      --border: #374151;
+      --btn: #10b981;
+      --btn-active: #059669;
+      --banner1: #1e5f42;
+      --banner2: #1a3a42;
+      --info-bg: #2d3748;
+      --input-bg: #111827;
+      --modal-bg: #1f2937;
+    }
+    html, body, #app {
+      height: 100%;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
