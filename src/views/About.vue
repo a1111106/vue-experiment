@@ -7,10 +7,12 @@
         </h2>
       </template>
       <el-descriptions :column="2" border>
-        <el-descriptions-item label="姓名">HJY</el-descriptions-item>
-        <el-descriptions-item label="专业">计算机科学与技术</el-descriptions-item>
+        <el-descriptions-item label="姓名">{{ profile.name || '未设置' }}</el-descriptions-item>
+        <el-descriptions-item label="专业">{{ profile.major || '计算机科学与技术' }}</el-descriptions-item>
         <el-descriptions-item label="方向">全栈开发 / 前端工程</el-descriptions-item>
-        <el-descriptions-item label="状态">大二在读</el-descriptions-item>
+        <el-descriptions-item label="状态">大三在读</el-descriptions-item>
+        <el-descriptions-item label="电话">{{ profile.phone || '未设置' }}</el-descriptions-item>
+        <el-descriptions-item label="简介">{{ profile.desc || '热爱前端开发' }}</el-descriptions-item>
         <el-descriptions-item label="技术栈" :span="2">
           <el-tag v-for="t in skills" :key="t" style="margin-right: 6px">{{ t }}</el-tag>
         </el-descriptions-item>
@@ -43,6 +45,16 @@
   </div>
 </template>
 <script setup>
+import { reactive } from 'vue'
+// 与首页共用同一份 localStorage，保证姓名/专业/电话一致
+const profile = reactive(
+  JSON.parse(localStorage.getItem('infoData')) || {
+    name: '未设置',
+    major: '计算机科学与技术',
+    phone: '',
+    desc: ''
+  }
+)
 const skills = ['Vue3', 'JavaScript', 'Node.js', 'MySQL', 'HTML/CSS', 'Git']
 const timeline = [
   { time: '2021-09', title: '踏入高中', desc: '开始接触编程，从 C 语言入门', type: 'primary' },

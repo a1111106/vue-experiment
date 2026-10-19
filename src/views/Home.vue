@@ -71,6 +71,8 @@ const handleUpdateAvatar = (url) => {
 }
 const handleSaveInfo = (newInfo) => {
   infoData.value = newInfo
+  // 写回 localStorage，刷新后保留
+  localStorage.setItem('infoData', JSON.stringify(newInfo))
   isInfoEdit.value = false
 }
 // ========== 技能列表 持久化 ==========
