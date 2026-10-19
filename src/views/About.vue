@@ -9,8 +9,8 @@
       <el-descriptions :column="2" border>
         <el-descriptions-item label="姓名">{{ profile.name || '未设置' }}</el-descriptions-item>
         <el-descriptions-item label="专业">{{ profile.major || '计算机科学与技术' }}</el-descriptions-item>
-        <el-descriptions-item label="方向">全栈开发 / 前端工程</el-descriptions-item>
-        <el-descriptions-item label="状态">大三在读</el-descriptions-item>
+        <el-descriptions-item label="方向">{{ profile.direction || '全栈开发 / 前端工程' }}</el-descriptions-item>
+        <el-descriptions-item label="状态">{{ profile.status || '大三在读' }}</el-descriptions-item>
         <el-descriptions-item label="电话">{{ profile.phone || '未设置' }}</el-descriptions-item>
         <el-descriptions-item label="简介">{{ profile.desc || '热爱前端开发' }}</el-descriptions-item>
         <el-descriptions-item label="技术栈" :span="2">
@@ -52,7 +52,9 @@ const profile = reactive(
     name: '未设置',
     major: '计算机科学与技术',
     phone: '',
-    desc: ''
+    desc: '',
+    direction: '全栈开发 / 前端工程',
+    status: '大三在读'
   }
 )
 // 技术栈实时读取首页技能列表，保持联动

@@ -37,6 +37,14 @@
         <label>简介</label>
         <textarea v-model="localInfo.desc"></textarea>
       </div>
+      <div class="edit-item">
+        <label>方向</label>
+        <input v-model="localInfo.direction" placeholder="如：全栈开发 / 前端工程" />
+      </div>
+      <div class="edit-item">
+        <label>状态</label>
+        <input v-model="localInfo.status" placeholder="如：大三在读" />
+      </div>
       <button class="btn primary" @click="saveInfo">保存</button>
     </div>
   </div>

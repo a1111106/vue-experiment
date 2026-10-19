@@ -62,6 +62,8 @@ const infoData = ref(JSON.parse(localStorage.getItem("infoData")) || {
   major: "计算机科学与技术",
   phone: "13800138000",
   desc: "热爱前端开发，熟悉Vue3、JS、HTML/CSS",
+  direction: "全栈开发 / 前端工程",
+  status: "大三在读",
   avatar: ""
 })
 const isInfoEdit = ref(false)
