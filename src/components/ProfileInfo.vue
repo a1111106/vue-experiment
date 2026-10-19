@@ -9,6 +9,14 @@
         <span class="label">电话：</span>
         <span>{{ info?.phone }}</span>
       </div>
+      <div class="info-row">
+        <span class="label">方向：</span>
+        <span>{{ info?.direction || '全栈开发 / 前端工程' }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">状态：</span>
+        <span>{{ info?.status || '大三在读' }}</span>
+      </div>
       <p v-if="showDetail" class="desc">
         <span class="label">简介：</span>
         {{ info?.desc }}
