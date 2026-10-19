@@ -68,6 +68,8 @@ const isInfoEdit = ref(false)
 const showInfoDetail = ref(false)
 const handleUpdateAvatar = (url) => {
   infoData.value.avatar = url
+  // 同步写回 localStorage，刷新后保留头像
+  localStorage.setItem('infoData', JSON.stringify(infoData.value))
 }
 const handleSaveInfo = (newInfo) => {
   infoData.value = newInfo

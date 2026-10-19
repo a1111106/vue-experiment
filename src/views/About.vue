@@ -55,7 +55,8 @@ const profile = reactive(
     desc: ''
   }
 )
-const skills = ['Vue3', 'JavaScript', 'Node.js', 'MySQL', 'HTML/CSS', 'Git']
+// 技术栈实时读取首页技能列表，保持联动
+const skills = JSON.parse(localStorage.getItem('skillList')) || ['Vue3', 'JavaScript', 'HTML/CSS']
 const timeline = [
   { time: '2021-09', title: '踏入高中', desc: '开始接触编程，从 C 语言入门', type: 'primary' },
   { time: '2024-09', title: '进入大学', desc: '就读计算机科学与技术专业，系统学习数据结构与操作系统', type: 'success' },
