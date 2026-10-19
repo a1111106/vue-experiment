@@ -86,11 +86,16 @@ const skillList = ref(JSON.parse(localStorage.getItem("skillList")) || [
   "HTML/CSS"
 ])
 const skillSearch = ref("")
+const saveSkills = () => {
+  localStorage.setItem("skillList", JSON.stringify(skillList.value))
+}
 const handleAddSkill = (skillName) => {
   skillList.value.push(skillName)
+  saveSkills()
 }
 const handleDelSkill = (index) => {
-  skillList.value.splice(index,1)
+  skillList.value.splice(index, 1)
+  saveSkills()
 }
 // =========新增项目、删除项目处理函数【改为调用pinia仓库方法】=========
 const handleAddProject = (newProj) => {
